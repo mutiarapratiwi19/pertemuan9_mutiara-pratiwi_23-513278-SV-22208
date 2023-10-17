@@ -1,0 +1,31 @@
+ef input_matrix(n, m):
+  matrix = []
+  for i in range(n):
+    row = []
+    for j in range(m):
+      row.append(int(input("Masukkan elemen matriks di baris {}, kolom {}: ".format(i + 1, j + 1))))
+    matrix.append(row)
+  return matrix
+
+def transpose_matrix(matrix):
+  n = len(matrix)
+  m = len(matrix[0])
+  matrix_transpose = []
+  for i in range(m):
+    row = []
+    for j in range(n):
+      row.append(matrix[j][i])
+    matrix_transpose.append(row)
+  return matrix_transpose
+
+def main():
+  n = int(input("Masukkan jumlah baris matriks: "))
+  m = int(input("Masukkan jumlah kolom matriks: "))
+  matrix = input_matrix(n, m)
+  matrix_transpose = transpose_matrix(matrix)
+  print("Hasil transpose matriks:")
+  for row in matrix_transpose:
+    print(row)
+
+if __name__ == "__main__":
+  main()
