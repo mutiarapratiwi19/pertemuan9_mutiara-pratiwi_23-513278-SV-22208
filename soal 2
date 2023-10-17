@@ -1,0 +1,32 @@
+def input_matrix(n, m):
+  matrix = []
+  for i in range(n):
+    row = []
+    for j in range(m):
+      row.append(int(input("Masukkan elemen matriks di baris {}, kolom {}: ".format(i + 1, j + 1))))
+    matrix.append(row)
+  return matrix
+
+def add_matrices(matrix1, matrix2):
+  n = len(matrix1)
+  m = len(matrix1[0])
+  matrix_result = []
+  for i in range(n):
+    row = []
+    for j in range(m):
+      row.append(matrix1[i][j] + matrix2[i][j])
+    matrix_result.append(row)
+  return matrix_result
+
+def main():
+  n = int(input("Masukkan jumlah baris matriks: "))
+  m = int(input("Masukkan jumlah kolom matriks: "))
+  matrix1 = input_matrix(n, m)
+  matrix2 = input_matrix(n, m)
+  matrix_result = add_matrices(matrix1, matrix2)
+  print("Hasil penjumlahan matriks:")
+  for row in matrix_result:
+    print(row)
+
+if __name__ == "__main__":
+  main()
