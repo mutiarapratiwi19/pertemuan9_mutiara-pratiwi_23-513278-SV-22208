@@ -1,0 +1,15 @@
+def generate_identity_matrix(n):
+  matrix = [[0 for col in range(n)] for row in range(n)]
+  for i in range(n):
+    matrix[i][i] = 1
+  return matrix
+
+def main():
+  n = int(input("Masukkan ukuran matriks: "))
+  matrix = generate_identity_matrix(n)
+  print("Matriks identitas berukuran {} x {}:".format(n, n))
+  for row in matrix:
+    print(row)
+
+if __name__ == "__main__":
+  main()
